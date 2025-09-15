@@ -33,5 +33,6 @@ router.use('/uploads', express.static(uploadsDir));
 // Routes
 router.get('/', CarController.getAllCars);
 router.get('/:id', CarController.getCarById);
+router.post("/", upload.single("image"), CarController.addCar);
 
 module.exports = router;
